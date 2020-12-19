@@ -10,6 +10,7 @@
 5. Complex functions are not allowed, create as many functions as you want but simple ones.
 6. If you created a complex function please explain what it does in a comment before its body.
 7. Variables Should be Meaningful and Clear ( i, a, b, x, y are not allowed) 
+8. Name Variables using Camel Case (ex Number of cells will be `numberOfCells`) every word starts with **Capital Letter**
 
 
 ## How to submit the task
