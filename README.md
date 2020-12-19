@@ -3,7 +3,7 @@
 ## Rules
 #### Read carefully and please do not break any of these rules
 
-1. Any Commits without a tile and a quick description is not allowed or it will be rejected
+1. Any Commits without a title and a quick description is not allowed or it will be rejected
 2. If there is an issue on your task ask your mates before adding it to issues
 3. Code should be clean and well structured or it will be rejected until you clean it
 4. Any Commit with new Classes on code should contain an image file with the UML of the new classes
