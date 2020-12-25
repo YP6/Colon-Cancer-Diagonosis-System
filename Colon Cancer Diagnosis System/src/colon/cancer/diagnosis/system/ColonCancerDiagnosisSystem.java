@@ -8,7 +8,9 @@ public class ColonCancerDiagnosisSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Reader read = new Reader("./colon Cancer Dataset.csv", 202, 63);
+        System.out.println(read.Read(34, 6));
+
     }
     
 }
