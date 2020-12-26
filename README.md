@@ -27,13 +27,13 @@
 
 ## How to make pull request
 
--open github desltop and clone a repo
--search for desired repo and then clone it by pressing clone make sure u know the path where u made the clone
--open the cloned project with netbeans and make the changes u want and save it
--now go to github desktop and click create fork and click fork this repository option
--it will ask u how u want to use this fork u choose contribute with parent project option and continue
--now enter the summary name and description and click commit to main and push origin
--now click on branch and then a list will appear u should choose create pull request that will redirect u to github on your default browser
--now u press create pull request and u and enter name and leave your comment and press create pull request
--that's it have a great time coding for the project
+- open github desltop and clone a repo
+- search for desired repo and then clone it by pressing clone make sure u know the path where u made the clone
+- open the cloned project with netbeans and make the changes u want and save it
+- now go to github desktop and click create fork and click fork this repository option
+- it will ask u how u want to use this fork u choose contribute with parent project option and continue
+- now enter the summary name and description and click commit to main and push origin
+- now click on branch and then a list will appear u should choose create pull request that will redirect u to github on your default browser
+- now u press create pull request and u and enter name and leave your comment and press create pull request
+- that's it have a great time coding for the project
 
