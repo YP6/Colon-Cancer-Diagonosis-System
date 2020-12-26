@@ -9,6 +9,8 @@ public class ColonCancerDiagnosisSystem {
      */
     public static void main(String[] args) {
         Reader read = new Reader("./colon Cancer Dataset.csv", 203, 63);
+        System.out.println(read.ReadGeneName(0));
+        System.out.println(read.ReadPatientGeneValue(0, 0));
         
     }
     
