@@ -15,20 +15,27 @@ public class Reader {
     private int rows,columns;
     String[] Data;
     
-    public Reader(String fileName, int rows, int columns) {
+    public Reader(String fileName, int columns, int rows) {
         this.fileName = fileName;
         this.rows = rows;
         this.columns = columns;
         file = new File(fileName);
         String filedata = new String("");
         
-        int counter = 0;
         try {
             inputStream = new Scanner(file);
+            boolean corrector = true;
             while(inputStream.hasNext())
             {
-                counter++;
+               
                 filedata += inputStream.next();
+                
+                if(!corrector)
+                {
+                    corrector = false;
+                    filedata +=",";
+                }
+                corrector = false;
             }
             
             Data = filedata.split(",");
@@ -39,12 +46,21 @@ public class Reader {
         }       
     }
     
-    public String Read(int patient, int gene)
+    public String ReadPatientGeneValue(int patient, int gene)
     {
-        int index = rows*(patient) + (gene);
-        System.out.println(index);
+        int index = columns*(patient) + (gene);
+      
         return Data[index];
     }
     
+    public String ReadPatientCondition(int patient)
+    {
+        return ReadPatientGeneValue(patient, 202);
+    }
+    
+    public String ReadGeneName(int gene)
+    {
+        return ReadPatientGeneValue(0, gene);
+    }
     
 }
