@@ -29,8 +29,8 @@ public class ColonCancerDiagnosisSystem {
             }
            
         }
-        
-
+        AccuracyCalculator accuracy = new AccuracyCalculator();
+        accuracy.showAccuracy(Correct);
         
     }
     
