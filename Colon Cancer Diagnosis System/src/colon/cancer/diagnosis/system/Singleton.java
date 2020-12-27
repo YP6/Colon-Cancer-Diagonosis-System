@@ -9,8 +9,25 @@ public class Singleton {
     public static Reader read;
     public static Patient[] patients;
     public static Classifier classifier;
-    private int PatientsNum, GenesNum, TrainingPatients, TestingPatients;
+    private static int PatientsNum, GenesNum, TrainingPatients, TestingPatients;
 
+    public static int getPatientsNum() {
+        return PatientsNum;
+    }
+
+    public static int getGenesNum() {
+        return GenesNum;
+    }
+
+    public static int getTrainingPatients() {
+        return TrainingPatients;
+    }
+
+    public static int getTestingPatients() {
+        return TestingPatients;
+    }
+
+    
     public static Singleton GetInstance()
     {
         return instance;
@@ -19,12 +36,11 @@ public class Singleton {
     public void InitializeProgram(String DataPath, int PatientsNum, int GenesNum, int TrainingPatients, int TestingPatients) {
         read = new Reader(DataPath, GenesNum+2 , PatientsNum+1);
         patients = new Patient[PatientsNum];
-        classifier = new Classifier();
         this.PatientsNum = PatientsNum;
         this.GenesNum = GenesNum;
         this.TrainingPatients = TrainingPatients;
         this.TestingPatients = TestingPatients;
-        
+        classifier = new Classifier();
         //Intializing Patients From DataSet
         for(int i = 0;i<PatientsNum;i++)
         {
@@ -66,13 +82,14 @@ public class Singleton {
     
     public void AddPatientINFO(int PatientID, String Name, int age, char Gender)
     {
-        patients[PatientID].setName(Name);
-        patients[PatientID].setAge(age);
-        patients[PatientID].setGender(Gender);
+        patients[PatientID-1].setName(Name);
+        patients[PatientID-1].setAge(age);
+        patients[PatientID-1].setGender(Gender);
     }
     
     public Patient GetPatient(int PatientID)
     {
+        Examine(PatientID);
         return patients[PatientID-1];
     }
     
@@ -86,6 +103,11 @@ public class Singleton {
         Examine();
         AccuracyCalculator Acc = new AccuracyCalculator();
         return Acc.getAccuracy(PatientsNum, TestingPatients);
+    }
+    
+    public double getDistance(int index, int patientID){
+        classifier.Examine(patients[patientID]);
+        return classifier.getDistance(index);
     }
     
 }
