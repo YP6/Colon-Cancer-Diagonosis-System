@@ -39,7 +39,6 @@ public class Reader {
             }
             
             Data = filedata.split(",");
-            
             inputStream.close();
         } catch (FileNotFoundException ex) {
             System.out.println("Wrong File path");
