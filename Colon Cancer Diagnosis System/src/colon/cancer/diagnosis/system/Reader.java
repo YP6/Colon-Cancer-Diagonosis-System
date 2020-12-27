@@ -55,7 +55,7 @@ public class Reader {
     
     public String ReadPatientCondition(int patient)
     {
-        return ReadPatientGeneValue(patient, 202);
+        return ReadPatientGeneValue(patient, columns-1);
     }
     
     public String ReadGeneName(int gene)

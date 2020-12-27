@@ -1,15 +1,14 @@
 package colon.cancer.diagnosis.system;
 
-import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.read;
-
+import static colon.cancer.diagnosis.system.Singleton.read;
 
 public class Patient extends Person{
      int ID;
-    private Cell cell = new Cell();
+    private Cell cell;
 
     public Patient(int ID) {
         this.ID = ID;
-         cell.setActualCondition(read.ReadPatientCondition(ID));
+        cell = new Cell(read.ReadPatientCondition(ID));
         for (int i = 0 ; i < 201 ; i++)
         {
             double value = Double.parseDouble(read.ReadPatientGeneValue(ID, i+1));

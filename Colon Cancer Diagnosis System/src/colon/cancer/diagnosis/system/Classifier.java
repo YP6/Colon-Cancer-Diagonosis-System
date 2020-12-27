@@ -1,8 +1,8 @@
 
 package colon.cancer.diagnosis.system;
 
-import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.patients;
-import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.read;
+import static colon.cancer.diagnosis.system.Singleton.patients;
+import static colon.cancer.diagnosis.system.Singleton.read;
 
 public class Classifier {
     double []Distances = new double[32];
@@ -28,7 +28,7 @@ public class Classifier {
            }
         }
         
-     
+        
         return read.ReadPatientCondition(index+1);
     }
 }
