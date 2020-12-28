@@ -1,10 +1,6 @@
 
 package colon.cancer.diagnosis.system;
 
-import colon.cancer.diagnosis.system.GUI.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 
 public class ColonCancerDiagnosisSystem {
   
