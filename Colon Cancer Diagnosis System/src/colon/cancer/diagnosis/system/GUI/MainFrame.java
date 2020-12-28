@@ -14,7 +14,6 @@ import javax.swing.JTextField;
 public class MainFrame extends JFrame {
     public JButton fileChooserButton , StartButton;
     public String filePath;
-    public JPanel textpanel;
     public JLabel numberOfPatientLabel , numberOfGenesLabel ,numberOfTrainedLabel ,numberOfTestLabel;
     public JTextField numberofPatientText ,numberOfGenesText ,numberOfTrainedText ,numberOfTestText;
     
@@ -23,27 +22,28 @@ public class MainFrame extends JFrame {
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout());
         fileChooserButton = new JButton("Choose File");
-        setSize(1500, 1000);
+        setSize(900, 900);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        textpanel = new JPanel();
         numberOfPatientLabel = new JLabel("Enter number of Patient : ");
-        numberofPatientText = new JTextField("" , 10);
+        numberOfPatientLabel.setSize(200, 200);
+        numberofPatientText = new JTextField("" , 50);
         numberOfGenesLabel = new JLabel("Enter number of Genes : ");
-        numberOfGenesText= new JTextField("" , 10);
+        numberOfGenesText= new JTextField("" , 50);
         numberOfTrainedLabel = new JLabel("Enter number of Trained Data : ");
-        numberOfTrainedText = new JTextField("" , 10);
+        numberOfTrainedText = new JTextField("" , 50);
         numberOfTestLabel  = new JLabel("Enter the number of patients : ");
-        numberOfTestText = new JTextField("" , 10);
+        numberOfTestText = new JTextField("" , 50);
         StartButton = new JButton("Start");
-        textpanel.add(numberOfPatientLabel);
-        textpanel.add(numberofPatientText);
-        textpanel.add(numberOfGenesLabel);
-        textpanel.add(numberOfGenesText);
-        textpanel.add(numberOfTrainedLabel);
-        textpanel.add(numberOfTrainedText);
-        textpanel.add(numberOfTestLabel);
-        textpanel.add(numberOfTestText);
-        add(textpanel);
+        add(numberOfPatientLabel);
+        add(numberofPatientText);
+        add(numberOfGenesLabel);
+        add(numberOfGenesText);
+        add(numberOfTrainedLabel);
+        add(numberOfTrainedText);
+        add(numberOfTestLabel);
+        add(numberOfTestText);
+        setSize(500, 500);
+       
         add(fileChooserButton);
         add(StartButton);
         
@@ -64,9 +64,13 @@ public class MainFrame extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-                Program.InitializeProgram(filePath, 62, 201, 32, 30);
-                 Program.Examine();
+                int numberOfPatient , numberOfGene,numberOfTrained , numberOfTest;
+                numberOfPatient = Integer.valueOf(numberofPatientText.getText());
+                numberOfGene = Integer.valueOf(numberOfGenesText.getText());
+                numberOfTrained = Integer.valueOf(numberOfTrainedText.getText());
+                numberOfTest = Integer.valueOf(numberOfTestText.getText());
+                Program.InitializeProgram(filePath, numberOfPatient, numberOfGene, numberOfTrained, numberOfTest);
+                Program.Examine();
         System.out.println("Done!");
         System.out.println(Program.getProgramAccuracy() + "%");
             }
