@@ -1,16 +1,20 @@
 
 package colon.cancer.diagnosis.system;
 
+import colon.cancer.diagnosis.system.GUI.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class ColonCancerDiagnosisSystem {
   
-
-    public static void main(String[] args) {
+    public static Singleton Program;
+    public static void main(String[] args) {        
+        Program = Singleton.GetInstance();
+        Program.Draw();
        
-        Singleton Program = Singleton.GetInstance();
-        Program.InitializeProgram("./colon Cancer Dataset.csv", 62, 201, 32, 30);
-        Program.Examine();
-        //System.out.println(Program.getProgramAccuracy() + "%");
+        //Program.InitializeProgram(path, 62, 201, 32, 30);
+       
         
     }
     
