@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
         
@@ -22,7 +21,7 @@ public class MainFrame extends JFrame {
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout());
         fileChooserButton = new JButton("Choose File");
-        setSize(900, 900);
+        setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         numberOfPatientLabel = new JLabel("Enter number of Patient : ");
         numberOfPatientLabel.setSize(200, 200);
@@ -31,7 +30,7 @@ public class MainFrame extends JFrame {
         numberOfGenesText= new JTextField("" , 50);
         numberOfTrainedLabel = new JLabel("Enter number of Trained Data : ");
         numberOfTrainedText = new JTextField("" , 50);
-        numberOfTestLabel  = new JLabel("Enter the number of patients : ");
+        numberOfTestLabel  = new JLabel("Enter the number of Test patient : ");
         numberOfTestText = new JTextField("" , 50);
         StartButton = new JButton("Start");
         add(numberOfPatientLabel);
@@ -42,8 +41,6 @@ public class MainFrame extends JFrame {
         add(numberOfTrainedText);
         add(numberOfTestLabel);
         add(numberOfTestText);
-        setSize(500, 500);
-       
         add(fileChooserButton);
         add(StartButton);
         
