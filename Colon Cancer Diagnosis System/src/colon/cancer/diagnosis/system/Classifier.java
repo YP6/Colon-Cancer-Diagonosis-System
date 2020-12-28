@@ -38,4 +38,5 @@ public class Classifier {
     public double getDistance(int index){
         return Distances[index];
     }
+    
 }
