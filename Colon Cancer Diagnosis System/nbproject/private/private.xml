@@ -5,7 +5,10 @@
         <group>
             <file>file:/D:/Projects/Colon-Cancer-Diagonosis-System/Colon%20Cancer%20Diagnosis%20System/src/colon/cancer/diagnosis/system/GUI/MainFrame.java</file>
             <file>file:/D:/Projects/Colon-Cancer-Diagonosis-System/Colon%20Cancer%20Diagnosis%20System/src/colon/cancer/diagnosis/system/ColonCancerDiagnosisSystem.java</file>
+            <file>file:/D:/Projects/Colon-Cancer-Diagonosis-System/Colon%20Cancer%20Diagnosis%20System/src/colon/cancer/diagnosis/system/GUI/StartPanel.java</file>
+            <file>file:/D:/Projects/Colon-Cancer-Diagonosis-System/Colon%20Cancer%20Diagnosis%20System/src/colon/cancer/diagnosis/system/GUI/OptionsPanel.java</file>
             <file>file:/D:/Projects/Colon-Cancer-Diagonosis-System/Colon%20Cancer%20Diagnosis%20System/src/colon/cancer/diagnosis/system/Singleton.java</file>
+            <file>file:/D:/Projects/Colon-Cancer-Diagonosis-System/Colon%20Cancer%20Diagnosis%20System/src/colon/cancer/diagnosis/system/GUI/TypesOfGraph.java</file>
         </group>
     </open-files>
 </project-private>

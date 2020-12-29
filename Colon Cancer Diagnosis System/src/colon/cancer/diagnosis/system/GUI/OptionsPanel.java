@@ -2,19 +2,19 @@ package colon.cancer.diagnosis.system.GUI;
 
 import java.awt.FlowLayout;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class OptionsFrame extends JFrame{
+public class OptionsPanel extends JPanel{
     public JButton graphButton;
     public JButton searchButton;
     
-    public OptionsFrame(){
-        setTitle("Colon Cancer Diagnosis System - Options");
-        setLayout(new FlowLayout());
+    public OptionsPanel(){
+       
+      
+       setLayout(new FlowLayout());    
         graphButton = new JButton("Show Graph");
         searchButton = new JButton("Search");
-        setSize(1500, 100);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 600);
         add(graphButton);
         add(searchButton);
     }    

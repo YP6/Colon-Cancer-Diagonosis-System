@@ -2,6 +2,7 @@
 package colon.cancer.diagnosis.system;
 
 import colon.cancer.diagnosis.system.GUI.MainFrame;
+import javax.swing.JFrame;
 
   
 

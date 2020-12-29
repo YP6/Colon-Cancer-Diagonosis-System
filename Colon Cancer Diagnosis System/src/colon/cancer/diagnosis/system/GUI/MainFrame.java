@@ -6,75 +6,102 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 
-        
 public class MainFrame extends JFrame {
-    public JButton fileChooserButton , StartButton;
-    public String filePath;
-    public JLabel numberOfPatientLabel , numberOfGenesLabel ,numberOfTrainedLabel ,numberOfTestLabel;
-    public JTextField numberofPatientText ,numberOfGenesText ,numberOfTrainedText ,numberOfTestText;
-    
-    
-    public MainFrame(){
+
+    private String filePath;
+    StartPanel startPanel;
+    OptionsPanel optionsPanel;
+    TypesOfGraph accurecyGraphPanel;
+    TypesOfGraph condtionGraphPanel;
+    int numberOfPatient , numberOfGene,numberOfTrained , numberOfTest;
+    int normalNum = 0 , abNormalNum = 0;
+    boolean isTested = false;
+    double normalPrecentage;
+
+    public MainFrame() {
         setTitle("Colon Cancer Diagnosis System");
-        setLayout(new FlowLayout());
-        fileChooserButton = new JButton("Choose File");
+        setLayout(new FlowLayout()); 
         setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        numberOfPatientLabel = new JLabel("Enter number of Patient : ");
-        numberOfPatientLabel.setSize(200, 200);
-        numberofPatientText = new JTextField("" , 50);
-        numberOfGenesLabel = new JLabel("Enter number of Genes : ");
-        numberOfGenesText= new JTextField("" , 50);
-        numberOfTrainedLabel = new JLabel("Enter number of Trained Data : ");
-        numberOfTrainedText = new JTextField("" , 50);
-        numberOfTestLabel  = new JLabel("Enter the number of Test patient : ");
-        numberOfTestText = new JTextField("" , 50);
-        StartButton = new JButton("Start");
-        add(numberOfPatientLabel);
-        add(numberofPatientText);
-        add(numberOfGenesLabel);
-        add(numberOfGenesText);
-        add(numberOfTrainedLabel);
-        add(numberOfTrainedText);
-        add(numberOfTestLabel);
-        add(numberOfTestText);
-        add(fileChooserButton);
-        add(StartButton);
-        
-          
-        
-        
-        
-        fileChooserButton.addActionListener(new ActionListener(){
+        startPanel = new StartPanel();
+        optionsPanel = new OptionsPanel();
+        add(startPanel);
+       
+
+        startPanel.fileChooserButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 filePath = (FileChooser.showFileChooser());
-               
+
             }
- });
+        });
         
-        StartButton.addActionListener(new ActionListener(){
+        startPanel.StartButton.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                int numberOfPatient , numberOfGene,numberOfTrained , numberOfTest;
-                numberOfPatient = Integer.valueOf(numberofPatientText.getText());
-                numberOfGene = Integer.valueOf(numberOfGenesText.getText());
-                numberOfTrained = Integer.valueOf(numberOfTrainedText.getText());
-                numberOfTest = Integer.valueOf(numberOfTestText.getText());
+                
+                numberOfPatient = Integer.valueOf(startPanel.numberofPatientText.getText());
+                numberOfGene = Integer.valueOf(startPanel.numberOfGenesText.getText());
+                numberOfTrained = Integer.valueOf(startPanel.numberOfTrainedText.getText());
+                numberOfTest = Integer.valueOf(startPanel.numberOfTestText.getText());
                 Program.InitializeProgram(filePath, numberOfPatient, numberOfGene, numberOfTrained, numberOfTest);
+                startPanel.setVisible(false);
+                add(optionsPanel);
+                optionsPanel.setVisible(true);
+                
+  
                 Program.Examine();
         System.out.println("Done!");
         System.out.println(Program.getProgramAccuracy() + "%");
             }
  });
+        optionsPanel.graphButton.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                optionsPanel.setVisible(false);
+                Program.Examine();
+                accurecyGraphPanel = new TypesOfGraph(Program.getProgramAccuracy() , "Accurate" ,"Unaccurate" , "Accuracy" );
+                add(accurecyGraphPanel);
+               
+                for (int i = numberOfTest; i < numberOfPatient; i++)
+                {
+                    if (isTested == true)break;
+                    if (Program.getPatientPredictedCondition(i).equals("Normal"))
+                    {
+                        normalNum++;
+                        
+                    }
+                    else abNormalNum++;
+                }
+                if (isTested == false)
+                {
+                    normalPrecentage = (normalNum/(double)numberOfTest)*100;
+                    isTested = true;
+                }
+                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions");
+                add(condtionGraphPanel);
+                JButton Backbutton = new JButton("Back");
+                add(Backbutton);
+                Backbutton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent ae) {
+                       optionsPanel.setVisible(true);
+                      condtionGraphPanel.setVisible(false);
+                      accurecyGraphPanel.setVisible(false);
+                      Backbutton.setVisible(false);
+                    }
+                });
+                
+          
+        System.out.println("Done!");
+        System.out.println(Program.getProgramAccuracy() + "%");
+            }
+ });
+
     }
-    public String getFilePath(){
-        System.out.println("Path: " + filePath);
-        return filePath;
-    }
+
 }
