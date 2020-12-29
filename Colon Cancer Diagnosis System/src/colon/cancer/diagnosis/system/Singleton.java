@@ -1,9 +1,13 @@
 
 package colon.cancer.diagnosis.system;
 
+import colon.cancer.diagnosis.system.GUI.MainFrame;
+import javax.swing.JFrame;
+
   
 
 public class Singleton {
+    public static boolean initialised = false; 
     private static Singleton instance = new Singleton();
  
     public static Reader read;
@@ -33,6 +37,14 @@ public class Singleton {
         return instance;
     }
     
+    public void Draw()
+    {
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.setVisible(true);
+       
+        
+    }
+    
     public void InitializeProgram(String DataPath, int PatientsNum, int GenesNum, int TrainingPatients, int TestingPatients) {
         read = new Reader(DataPath, GenesNum+2 , PatientsNum+1);
         patients = new Patient[PatientsNum];
@@ -40,6 +52,7 @@ public class Singleton {
         this.GenesNum = GenesNum;
         this.TrainingPatients = TrainingPatients;
         this.TestingPatients = TestingPatients;
+        initialised = true;
         classifier = new Classifier();
         //Intializing Patients From DataSet
         for(int i = 0;i<PatientsNum;i++)
