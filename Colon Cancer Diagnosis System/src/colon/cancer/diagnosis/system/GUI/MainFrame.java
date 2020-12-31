@@ -9,11 +9,13 @@ import javax.swing.JFrame;
 
 public class MainFrame extends JFrame {
 
-    private String filePath;
+    private String filePath = "./colon Cancer Dataset.csv";
     StartPanel startPanel;
     OptionsPanel optionsPanel;
     TypesOfGraph accurecyGraphPanel;
     TypesOfGraph condtionGraphPanel;
+    Search searchpanel;
+    Add_Info AddPanel;
     int numberOfPatient , numberOfGene,numberOfTrained , numberOfTest;
     int normalNum = 0 , abNormalNum = 0;
     boolean isTested = false;
@@ -22,10 +24,13 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout()); 
-        setSize(600, 600);
+        setSize(600, 730);
+        setLocation(400,0);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startPanel = new StartPanel();
         optionsPanel = new OptionsPanel();
+        AddPanel = new Add_Info();
+        searchpanel = new Search();
         add(startPanel);
        
 
@@ -101,6 +106,55 @@ public class MainFrame extends JFrame {
         System.out.println(Program.getProgramAccuracy() + "%");
             }
  });
+        optionsPanel.AddButton.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                optionsPanel.setVisible(false);
+                AddPanel.setVisible(true);
+                add(AddPanel);
+                Program.Examine();
+               
+                AddPanel.jButton2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent ae) {
+                       optionsPanel.setVisible(true);
+                      AddPanel.setVisible(false);
+                    
+                    }
+                });
+               
+                
+          
+        System.out.println("Done!");
+        System.out.println(Program.getProgramAccuracy() + "%");
+            }
+ });
+        optionsPanel.searchButton.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                optionsPanel.setVisible(false);
+                add(searchpanel);
+                searchpanel.setVisible(true);
+                Program.Examine();
+               
+                searchpanel.jButton2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent ae) {
+                       optionsPanel.setVisible(true);
+                     searchpanel.setVisible(false);
+                    
+                    }
+                });
+                
+          
+        System.out.println("Done!");
+        System.out.println(Program.getProgramAccuracy() + "%");
+            }
+ });
+        
+        
 
     }
 

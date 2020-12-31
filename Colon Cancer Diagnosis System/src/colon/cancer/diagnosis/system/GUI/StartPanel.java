@@ -21,13 +21,13 @@ public class StartPanel extends JPanel {
         setSize(200, 200);
         numberOfPatientLabel = new JLabel("Enter number of Patient : ");
         numberOfPatientLabel.setSize(200, 200);
-        numberofPatientText = new JTextField("" , 10);
+        numberofPatientText = new JTextField("62" , 10);
         numberOfGenesLabel = new JLabel("Enter number of Genes : ");
-        numberOfGenesText= new JTextField("" , 10);
+        numberOfGenesText= new JTextField("201" , 10);
         numberOfTrainedLabel = new JLabel("Enter number of Trained Data : ");
-        numberOfTrainedText = new JTextField("" , 10);
+        numberOfTrainedText = new JTextField("32" , 10);
         numberOfTestLabel  = new JLabel("Enter the number of Test patient : ");
-        numberOfTestText = new JTextField("" , 10);
+        numberOfTestText = new JTextField("30" , 10);
         StartButton = new JButton("Start");
         setLayout(new FlowLayout());
         add(numberOfPatientLabel);
