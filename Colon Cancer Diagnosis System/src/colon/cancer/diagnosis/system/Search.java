@@ -5,7 +5,7 @@ import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.Program;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import static colon.cancer.diagnosis.system.Singleton.patients;
-import com.sun.org.apache.regexp.internal.REProgram;
+
 
 
 

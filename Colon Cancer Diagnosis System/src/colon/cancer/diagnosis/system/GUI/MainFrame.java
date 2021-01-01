@@ -1,9 +1,12 @@
 package colon.cancer.diagnosis.system.GUI;
 
 import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.Program;
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -24,13 +27,17 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout()); 
-        setSize(600, 730);
-        setLocation(400,0);
+        setSize(900, 350);
+        setLocation(300,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startPanel = new StartPanel();
         optionsPanel = new OptionsPanel();
         AddPanel = new Add_Info();
         searchpanel = new Search();
+       // BoxLayout layout = new BoxLayout(startPanel, BoxLayout.Y_AXIS);
+        GridLayout layout = new GridLayout(6,0);
+        layout.setVgap(20);
+        startPanel.setLayout(layout);
         add(startPanel);
        
 
@@ -39,6 +46,10 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 filePath = (FileChooser.showFileChooser());
+                if(filePath != "Wrong File Path!")
+                {
+                    startPanel.DataSetPathText.setText(filePath);
+                }
 
             }
         });
@@ -57,10 +68,10 @@ public class MainFrame extends JFrame {
                 add(optionsPanel);
                 optionsPanel.setVisible(true);
                 
-  
+                setSize(1400, 600);
+                setLocation(75, 100);
                 Program.Examine();
-        System.out.println("Done!");
-        System.out.println(Program.getProgramAccuracy() + "%");
+        
             }
  });
         optionsPanel.graphButton.addActionListener(new ActionListener(){
@@ -69,7 +80,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 optionsPanel.setVisible(false);
                 Program.Examine();
-                accurecyGraphPanel = new TypesOfGraph(Program.getProgramAccuracy() , "Accurate" ,"Unaccurate" , "Accuracy" );
+                accurecyGraphPanel = new TypesOfGraph(Program.getProgramAccuracy() , "Accurate" ,"Unaccurate" , "Accuracy" , Color.CYAN , Color.MAGENTA );
                 add(accurecyGraphPanel);
                
                 for (int i = numberOfTest; i < numberOfPatient; i++)
@@ -87,7 +98,7 @@ public class MainFrame extends JFrame {
                     normalPrecentage = (normalNum/(double)numberOfTest)*100;
                     isTested = true;
                 }
-                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions");
+                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.BLUE , Color.GREEN);
                 add(condtionGraphPanel);
                 JButton Backbutton = new JButton("Back");
                 add(Backbutton);
@@ -102,8 +113,7 @@ public class MainFrame extends JFrame {
                 });
                 
           
-        System.out.println("Done!");
-        System.out.println(Program.getProgramAccuracy() + "%");
+       
             }
  });
         optionsPanel.AddButton.addActionListener(new ActionListener(){
