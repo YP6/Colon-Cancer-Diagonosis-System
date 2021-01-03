@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 public class MainFrame extends JFrame {
 
@@ -18,7 +19,7 @@ public class MainFrame extends JFrame {
     TypesOfGraph accurecyGraphPanel;
     TypesOfGraph condtionGraphPanel;
     Search searchpanel;
-    Add_Info AddPanel;
+    AddInfo AddPanel;
     int numberOfPatient , numberOfGene,numberOfTrained , numberOfTest;
     int normalNum = 0 , abNormalNum = 0;
     boolean isTested = false;
@@ -27,15 +28,15 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout()); 
-        setSize(900, 350);
+        setSize(750, 500);
         setLocation(300,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startPanel = new StartPanel();
         optionsPanel = new OptionsPanel();
-        AddPanel = new Add_Info();
+        AddPanel = new AddInfo();
         searchpanel = new Search();
        // BoxLayout layout = new BoxLayout(startPanel, BoxLayout.Y_AXIS);
-        GridLayout layout = new GridLayout(6,0);
+        GridLayout layout = new GridLayout(7,0);
         layout.setVgap(20);
         startPanel.setLayout(layout);
         add(startPanel);
@@ -46,9 +47,12 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 filePath = (FileChooser.showFileChooser());
+                
                 if(filePath != "Wrong File Path!")
                 {
                     startPanel.DataSetPathText.setText(filePath);
+                }else{
+                    filePath = startPanel.DataSetPathText.getText();
                 }
 
             }
@@ -74,6 +78,8 @@ public class MainFrame extends JFrame {
         
             }
  });
+        
+        
         optionsPanel.graphButton.addActionListener(new ActionListener(){
 
             @Override
@@ -135,9 +141,7 @@ public class MainFrame extends JFrame {
                 });
                
                 
-          
-        System.out.println("Done!");
-        System.out.println(Program.getProgramAccuracy() + "%");
+       
             }
  });
         optionsPanel.searchButton.addActionListener(new ActionListener(){
@@ -158,9 +162,7 @@ public class MainFrame extends JFrame {
                     }
                 });
                 
-          
-        System.out.println("Done!");
-        System.out.println(Program.getProgramAccuracy() + "%");
+        
             }
  });
         

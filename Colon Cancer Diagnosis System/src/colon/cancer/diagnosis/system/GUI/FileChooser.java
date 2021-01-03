@@ -11,7 +11,8 @@ public class FileChooser extends JFrame {
     public static String showFileChooser(){
         try
         {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            
+           // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex)
         {
             System.out.println("EXCEPTION");

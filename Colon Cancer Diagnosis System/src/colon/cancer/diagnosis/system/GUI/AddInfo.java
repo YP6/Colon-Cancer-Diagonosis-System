@@ -8,9 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 
-public class Add_Info extends javax.swing.JPanel {
+public class AddInfo extends javax.swing.JPanel {
 
-    public Add_Info() {
+    public AddInfo() {
         initComponents();
     }
 
