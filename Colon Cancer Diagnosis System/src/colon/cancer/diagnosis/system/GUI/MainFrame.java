@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
@@ -26,6 +27,8 @@ public class MainFrame extends JFrame {
     double normalPrecentage;
 
     public MainFrame() {
+        ImageIcon frameIcon = new ImageIcon("E:\\Projects\\CCDS\\Colon-Cancer-Diagonosis-System\\Colon Cancer Diagnosis System\\Icons\\medical-report.png");
+        setIconImage(frameIcon.getImage());
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout()); 
         setSize(750, 500);
