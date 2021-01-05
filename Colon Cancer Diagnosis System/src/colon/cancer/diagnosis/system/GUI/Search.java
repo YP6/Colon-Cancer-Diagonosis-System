@@ -27,6 +27,8 @@ public class Search extends javax.swing.JPanel {
         PREDICT_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jButton1.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jButton2.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jButton1.setFocusable(false);
+        jButton2.setFocusable(false);
         jLabel1.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jLabel2.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jLabel3.setFont(new Font("Lucida Fax", Font.BOLD, 16));

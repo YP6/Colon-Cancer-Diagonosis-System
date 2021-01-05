@@ -23,6 +23,8 @@ public class AddInfo extends javax.swing.JPanel {
         Name1_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jButton1.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jButton2.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jButton1.setFocusable(false);
+        jButton2.setFocusable(false);
         jLabel1.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jLabel2.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         jLabel3.setFont(new Font("Lucida Fax", Font.BOLD, 16));
@@ -161,7 +163,7 @@ public class AddInfo extends javax.swing.JPanel {
         patients[i-1].setName(Name1_txt.getText());
         patients[i-1].setAge(Integer.parseInt(Age1_txt.getText()));
         patients[i-1].setGender(Gender1_txt.getText().charAt(0));
-        JOptionPane.showMessageDialog(this, "submitted", "Alert", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Submitted", "Submitted Successfully", JOptionPane.NO_OPTION);
         ID1_txt.setText("");
             Name1_txt.setText("");
             Age1_txt.setText("");

@@ -12,6 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.UIManager;
 
 public class MainFrame extends JFrame {
@@ -91,7 +92,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 optionsPanel.setVisible(false);
                 Program.Examine();
-                accurecyGraphPanel = new TypesOfGraph(Program.getProgramAccuracy() , "Accurate" ,"Unaccurate" , "Accuracy" , Color.CYAN , Color.MAGENTA );
+                accurecyGraphPanel = new TypesOfGraph(Program.getProgramAccuracy() , "Accurate" ,"Unaccurate" , "Accuracy" , Color.DARK_GRAY , Color.pink );
                 add(accurecyGraphPanel);
                
                 for (int i = numberOfTest; i < numberOfPatient; i++)
@@ -109,7 +110,7 @@ public class MainFrame extends JFrame {
                     normalPrecentage = (normalNum/(double)numberOfTest)*100;
                     isTested = true;
                 }
-                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.BLUE , Color.GREEN);
+                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.RED , Color.BLUE);
                 add(condtionGraphPanel);
                 
                 ImageIcon backIcon = new ImageIcon("Icons\\back.png");
