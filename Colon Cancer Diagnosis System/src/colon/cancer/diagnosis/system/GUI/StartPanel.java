@@ -2,11 +2,13 @@
 package colon.cancer.diagnosis.system.GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -26,27 +28,44 @@ public class StartPanel extends JPanel {
     {
         
        
-        numberOfPatientLabel = new JLabel("Enter number of Patient : ");
+        numberOfPatientLabel = new JLabel("Number of Patients : ");
         numberOfPatientLabel.setSize(200, 200);
+        numberOfPatientLabel.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         numberofPatientText = new JTextField("62" , 10);
         numberofPatientText.setHorizontalAlignment(SwingConstants.CENTER);
-        numberOfGenesLabel = new JLabel("Enter number of Genes : ");
+        numberofPatientText.setFont(new Font("Lucida Fax", Font.BOLD, 20));
+        numberofPatientText.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        numberOfGenesLabel = new JLabel("Number of Genes : ");
+        numberOfGenesLabel.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         numberOfGenesText= new JTextField("201" , 10);
+        numberOfGenesText.setFont(new Font("Lucida Fax", Font.BOLD, 20));
+        numberOfGenesText.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         numberOfGenesText.setHorizontalAlignment(SwingConstants.CENTER);
-        numberOfTrainedLabel = new JLabel("Enter number of Trained Data : ");
+        numberOfTrainedLabel = new JLabel("Number of Trained Patients : ");
+        numberOfTrainedLabel.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         numberOfTrainedText = new JTextField("32" , 10);
+        numberOfTrainedText.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         numberOfTrainedText.setHorizontalAlignment(SwingConstants.CENTER);
-        numberOfTestLabel  = new JLabel("Enter the number of Test patient : ");
+        numberOfTrainedText.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        numberOfTestLabel  = new JLabel("Number of Test Patients : ");
+        numberOfTestLabel.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         numberOfTestText = new JTextField("30" , 10);
+        numberOfTestText.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         numberOfTestText.setHorizontalAlignment(SwingConstants.CENTER);
+        numberOfTestText.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         DataSetPathLabel  = new JLabel("Dataset Path : ");
+        DataSetPathLabel.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         DataSetPathText = new JTextField("./colon Cancer Dataset.csv" , 50);
+        DataSetPathText.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        DataSetPathText.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         DataSetPathText.setEditable(false);
         fileChooserButton = new JButton("Choose File");
+        fileChooserButton.setFont(new Font("Lucida Fax", Font.BOLD, 20));
         StartButton = new JButton("Start");
+        StartButton.setFont(new Font("Lucida Fax", Font.BOLD, 20));
        
         JLabel Title = new JLabel("Dataset Setup", SwingConstants.CENTER);
-        Title.setFont(new Font("Serif", Font.BOLD, 35));
+        Title.setFont(new Font("Lucida Fax", Font.BOLD, 35));
         add(Title);
         JComponent []Containers = new JComponent[6];
         

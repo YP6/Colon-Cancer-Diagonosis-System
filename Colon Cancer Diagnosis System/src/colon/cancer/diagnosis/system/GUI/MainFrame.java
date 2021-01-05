@@ -3,6 +3,7 @@ package colon.cancer.diagnosis.system.GUI;
 import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.Program;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,7 +32,7 @@ public class MainFrame extends JFrame {
         setIconImage(frameIcon.getImage());
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout()); 
-        setSize(750, 500);
+        setSize(1300, 500);
         setLocation(300,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startPanel = new StartPanel();
@@ -110,6 +111,7 @@ public class MainFrame extends JFrame {
                 condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.BLUE , Color.GREEN);
                 add(condtionGraphPanel);
                 JButton Backbutton = new JButton("Back");
+                Backbutton.setFont(new Font("Lucida Fax", Font.BOLD, 16));
                 add(Backbutton);
                 Backbutton.addActionListener(new ActionListener() {
                     @Override

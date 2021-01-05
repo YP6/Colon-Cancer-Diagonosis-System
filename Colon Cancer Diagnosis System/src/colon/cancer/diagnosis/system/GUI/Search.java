@@ -5,8 +5,11 @@ import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.Program;
 import colon.cancer.diagnosis.system.Singleton;
 import javax.swing.JOptionPane;
 import static colon.cancer.diagnosis.system.Singleton.patients;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.text.*;
 
@@ -14,8 +17,27 @@ public class Search extends javax.swing.JPanel {
 
     public Search() {
         initComponents();
+        ACTUAL_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        Age_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        Gender_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        ID_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        Name_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        PREDICT_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jButton1.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jButton2.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jLabel1.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jLabel2.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jLabel3.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jLabel4.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jLabel5.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        jLabel6.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         
-        
+        ACTUAL_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        Age_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        Gender_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        ID_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        Name_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        PREDICT_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
     }
 
     /**
@@ -109,13 +131,13 @@ public class Search extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
