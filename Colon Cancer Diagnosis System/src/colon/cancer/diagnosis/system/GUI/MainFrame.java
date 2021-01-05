@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
@@ -28,11 +29,11 @@ public class MainFrame extends JFrame {
     double normalPrecentage;
 
     public MainFrame() {
-        ImageIcon frameIcon = new ImageIcon("E:\\Projects\\CCDS\\Colon-Cancer-Diagonosis-System\\Colon Cancer Diagnosis System\\Icons\\medical-report.png");
+        ImageIcon frameIcon = new ImageIcon("Icons\\medical-report.png");
         setIconImage(frameIcon.getImage());
         setTitle("Colon Cancer Diagnosis System");
         setLayout(new FlowLayout()); 
-        setSize(1300, 500);
+        setSize(1350, 600);
         setLocation(300,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startPanel = new StartPanel();
@@ -110,8 +111,16 @@ public class MainFrame extends JFrame {
                 }
                 condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.BLUE , Color.GREEN);
                 add(condtionGraphPanel);
+                
+                ImageIcon backIcon = new ImageIcon("Icons\\back.png");
+                Image backImg = backIcon.getImage();
+                Image resizedBackImg = backImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+                backIcon = new ImageIcon(resizedBackImg);
+        
+                
                 JButton Backbutton = new JButton("Back");
                 Backbutton.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+                Backbutton.setIcon(backIcon);
                 add(Backbutton);
                 Backbutton.addActionListener(new ActionListener() {
                     @Override

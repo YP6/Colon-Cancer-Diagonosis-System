@@ -6,7 +6,9 @@ import colon.cancer.diagnosis.system.Singleton;
 import static colon.cancer.diagnosis.system.Singleton.patients;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -31,6 +33,20 @@ public class AddInfo extends javax.swing.JPanel {
         Gender1_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         ID1_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         Name1_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+    
+        ImageIcon submitIcon = new ImageIcon("Icons\\submit.png");
+        Image submitImg = submitIcon.getImage();
+        Image resizedSubmitImg = submitImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+        submitIcon = new ImageIcon(resizedSubmitImg);
+        
+        ImageIcon backIcon = new ImageIcon("Icons\\back.png");
+        Image backImg = backIcon.getImage();
+        Image resizedBackImg = backImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+        backIcon = new ImageIcon(resizedBackImg);
+        
+        jButton1.setIcon(submitIcon);
+        jButton2.setIcon(backIcon);
+    
     }
 
     @SuppressWarnings("unchecked")
@@ -95,16 +111,16 @@ public class AddInfo extends javax.swing.JPanel {
                             .addComponent(Age1_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Name1_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(140, 140, 140))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(297, 297, 297))
             .addGroup(layout.createSequentialGroup()
                 .addGap(252, 252, 252)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(247, 247, 247))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

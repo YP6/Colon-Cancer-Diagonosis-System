@@ -12,7 +12,7 @@ public class FileChooser extends JFrame {
         try
         {
             
-           // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+           //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex)
         {
             System.out.println("EXCEPTION");

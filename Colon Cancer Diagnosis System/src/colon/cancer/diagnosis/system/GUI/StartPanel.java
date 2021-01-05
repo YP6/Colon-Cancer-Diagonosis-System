@@ -7,9 +7,11 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.LayoutManager;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -26,6 +28,15 @@ public class StartPanel extends JPanel {
     
     public StartPanel()
     {
+        ImageIcon startIcon = new ImageIcon("Icons\\power.png");
+        Image startImg = startIcon.getImage();
+        Image resizedStartImg = startImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+        startIcon = new ImageIcon(resizedStartImg);
+        
+        ImageIcon attachIcon = new ImageIcon("Icons\\attached.png");
+        Image attachImg = attachIcon.getImage();
+        Image resizedAttachImg = attachImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+        attachIcon = new ImageIcon(resizedAttachImg);
         
        
         numberOfPatientLabel = new JLabel("Number of Patients : ");
@@ -61,9 +72,13 @@ public class StartPanel extends JPanel {
         DataSetPathText.setEditable(false);
         fileChooserButton = new JButton("Choose File");
         fileChooserButton.setFont(new Font("Lucida Fax", Font.BOLD, 20));
+        fileChooserButton.setIcon(attachIcon);
+        fileChooserButton.setFocusable(false);
         StartButton = new JButton("Start");
         StartButton.setFont(new Font("Lucida Fax", Font.BOLD, 20));
-       
+        StartButton.setIcon(startIcon);
+        StartButton.setFocusable(false);
+        
         JLabel Title = new JLabel("Dataset Setup", SwingConstants.CENTER);
         Title.setFont(new Font("Lucida Fax", Font.BOLD, 35));
         add(Title);

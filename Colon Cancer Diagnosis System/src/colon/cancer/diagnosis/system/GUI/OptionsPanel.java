@@ -3,9 +3,13 @@ package colon.cancer.diagnosis.system.GUI;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,6 +22,20 @@ public class OptionsPanel extends JPanel{
     public JButton alo;
     public OptionsPanel(){
        
+        ImageIcon graphIcon = new ImageIcon("Icons\\pie-chart.png");
+        Image graphImg = graphIcon.getImage();
+        Image resizedGraphImg = graphImg.getScaledInstance(25, 25, java.awt.Image.SCALE_SMOOTH);
+        graphIcon = new ImageIcon(resizedGraphImg);
+        
+        ImageIcon addIcon = new ImageIcon("Icons\\add.png");
+        Image addImg = addIcon.getImage();
+        Image resizedAddImg = addImg.getScaledInstance(25, 25, java.awt.Image.SCALE_SMOOTH);
+        addIcon = new ImageIcon(resizedAddImg);
+        
+        ImageIcon searchIcon = new ImageIcon("Icons\\search.png");
+        Image searchImg = searchIcon.getImage();
+        Image resizedSearchImg = searchImg.getScaledInstance(25, 25, java.awt.Image.SCALE_SMOOTH);
+        searchIcon = new ImageIcon(resizedSearchImg);
         
         GridLayout layout = new GridLayout(2,3);
         layout.setHgap(100);
@@ -26,11 +44,18 @@ public class OptionsPanel extends JPanel{
         
         graphButton = new JButton("Show Graph");
         graphButton.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        graphButton.setIcon(graphIcon);
+        graphButton.setFocusable(false);
         searchButton = new JButton("Search");
         searchButton.setFont(new Font("Lucida Fax", Font.BOLD, 16));
+        searchButton.setIcon(searchIcon);
+        searchButton.setFocusable(false);
         AddButton = new JButton("Add");
         AddButton.setFont(new Font("Lucida Fax", Font.BOLD, 16));
-        graphButton.setPreferredSize(new Dimension(150, 100));
+        AddButton.setIcon(addIcon);
+        AddButton.setFocusable(false);
+        
+        graphButton.setPreferredSize(new Dimension(200, 75));
        
         add(new JPanel());
         JLabel Title = new JLabel("Menu", SwingConstants.CENTER);

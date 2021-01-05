@@ -7,9 +7,11 @@ import javax.swing.JOptionPane;
 import static colon.cancer.diagnosis.system.Singleton.patients;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.text.*;
 
@@ -38,6 +40,20 @@ public class Search extends javax.swing.JPanel {
         ID_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         Name_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
         PREDICT_txt.setBorder(BorderFactory.createSoftBevelBorder(1, Color.white, Color.darkGray));
+        
+        ImageIcon searchIcon = new ImageIcon("Icons\\search.png");
+        Image searchImg = searchIcon.getImage();
+        Image resizedSearchImg = searchImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+        searchIcon = new ImageIcon(resizedSearchImg);
+        
+        ImageIcon backIcon = new ImageIcon("Icons\\back.png");
+        Image backImg = backIcon.getImage();
+        Image resizedBackImg = backImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+        backIcon = new ImageIcon(resizedBackImg);
+        
+        jButton1.setIcon(searchIcon);
+        jButton2.setIcon(backIcon);
+    
     }
 
     /**
