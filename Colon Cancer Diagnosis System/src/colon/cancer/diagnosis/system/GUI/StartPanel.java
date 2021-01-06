@@ -28,6 +28,7 @@ public class StartPanel extends JPanel {
     
     public StartPanel()
     {
+        setOpaque(false);
         ImageIcon startIcon = new ImageIcon("Icons\\power.png");
         Image startImg = startIcon.getImage();
         Image resizedStartImg = startImg.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
@@ -88,6 +89,7 @@ public class StartPanel extends JPanel {
         {
             Containers[i] = new JPanel();
             Containers[i].setLayout(new BorderLayout(10,10));
+            Containers[i].setOpaque(false);
         }
         
         
@@ -105,6 +107,7 @@ public class StartPanel extends JPanel {
        
         Containers[3].add(numberOfTestText, BorderLayout.LINE_END);
         JComponent Cont = new JPanel();
+        Cont.setOpaque(false);
         Cont.setLayout(new BorderLayout(10,10));
         Cont.add(DataSetPathLabel,BorderLayout.LINE_START);
         Cont.add(DataSetPathText);

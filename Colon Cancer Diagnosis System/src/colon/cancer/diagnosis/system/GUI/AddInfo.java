@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class AddInfo extends javax.swing.JPanel {
 
     public AddInfo() {
+        setOpaque(false);
         initComponents();
         Age1_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         Gender1_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));

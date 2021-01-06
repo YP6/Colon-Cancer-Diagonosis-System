@@ -1,6 +1,7 @@
 package colon.cancer.diagnosis.system.GUI;
 
 import static colon.cancer.diagnosis.system.ColonCancerDiagnosisSystem.Program;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -30,6 +31,12 @@ public class MainFrame extends JFrame {
     double normalPrecentage;
 
     public MainFrame() {
+        ImageIcon backgroundimage = new ImageIcon("cancer.jpg");
+        JLabel backgroundLabel = new JLabel(backgroundimage);
+        backgroundLabel.setBounds(0 , 0 , 1200 , 1200);
+        setLayout(new BorderLayout());
+        setContentPane(backgroundLabel);
+        //frame.setLayout(new FlowLayout());
         ImageIcon frameIcon = new ImageIcon("Icons\\medical-report.png");
         setIconImage(frameIcon.getImage());
         setTitle("Colon Cancer Diagnosis System");
@@ -45,6 +52,7 @@ public class MainFrame extends JFrame {
         GridLayout layout = new GridLayout(7,0);
         layout.setVgap(20);
         startPanel.setLayout(layout);
+        
         add(startPanel);
        
 
@@ -110,7 +118,7 @@ public class MainFrame extends JFrame {
                     normalPrecentage = (normalNum/(double)numberOfTest)*100;
                     isTested = true;
                 }
-                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.RED , Color.BLUE);
+                condtionGraphPanel = new TypesOfGraph( normalPrecentage, "Tested Negative" , "Tested Postive" , "Condtions" , Color.lightGray , Color.BLACK);
                 add(condtionGraphPanel);
                 
                 ImageIcon backIcon = new ImageIcon("Icons\\back.png");

@@ -18,6 +18,7 @@ import javax.swing.text.*;
 public class Search extends javax.swing.JPanel {
 
     public Search() {
+        setOpaque(false);
         initComponents();
         ACTUAL_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));
         Age_txt.setFont(new Font("Lucida Fax", Font.BOLD, 16));

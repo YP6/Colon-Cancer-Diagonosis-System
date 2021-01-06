@@ -29,7 +29,7 @@ public class TypesOfGraph extends JPanel{
     
     private PieDataset CreateDataSet(double Accuracy , String name1 , String name2)
     {
-        
+        setOpaque(false);
         DefaultPieDataset result = new DefaultPieDataset();
         result.setValue(name1, Accuracy);
         result.setValue(name2, 100 - Accuracy);
