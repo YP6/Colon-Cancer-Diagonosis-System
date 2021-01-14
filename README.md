@@ -1,7 +1,7 @@
 # Colon Cancer Diagnosis System:
 A Java based OOP System that Detects whether the Inputted Colon Cell is a Malignant or a Benign Tumor Colon Cell, Based on the Registered Cells Previously Diagnosed.
 
-<img src = "Icons/Setup.JPG" alt = "Dataset Setup">
+<img src = "Setup.JPG" alt = "Dataset Setup">
 
 ## Dataset Setup Consists of:
 1- Number of Patients.
@@ -10,7 +10,7 @@ A Java based OOP System that Detects whether the Inputted Colon Cell is a Malign
 4- Number of Tested Patients.
 5- Dataset File Path.
 
-<img src = "Icons/Features.JPG" alt = "Main Menu Features">
+<img src = "Features.JPG" alt = "Main Menu Features">
 
 ## System Features:
 1- **Show Graph**: Shows a Pie Graph of the Sample Accuracy and the Percentage of Predicted Conditions.
