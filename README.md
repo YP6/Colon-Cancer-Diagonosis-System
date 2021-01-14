@@ -6,14 +6,14 @@ A Java based OOP System that Detects whether the Inputted Colon Cell is a Malign
 2- Number of Genes.<br>
 3- Number of Trained Patients.<br>
 4- Number of Tested Patients.<br>
-5- Dataset File Path.<br>
+5- Dataset File Path.<br> <br>
 <img src = "Setup.jpg" alt = "Dataset Setup">
 
 
 ## System Features:
 1- **Show Graph**: Shows a Pie Graph of the Sample Accuracy and the Percentage of Predicted Conditions.<br>
 2- **Add**: Adds a Patient's Inforamtion to the System.<br>
-3- **Search**: Searches for a Patient in the System to Show the Actual and Predicted Value using the Nearest Neighbour Classification Method.<br>
+3- **Search**: Searches for a Patient in the System to Show the Actual and Predicted Value using the Nearest Neighbour Classification Method.<br> <br>
 <img src = "Features.jpg" alt = "Main Menu Features">
 
 ## **Nearest Neighbour** Classification Mehtod:
