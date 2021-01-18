@@ -10,6 +10,10 @@ public class Singleton {
     public static boolean initialised = false; 
     private static Singleton instance = new Singleton();
  
+    private Singleton()
+    {
+        
+    }
     public static Reader read;
     public static Patient[] patients;
     public static Classifier classifier;
